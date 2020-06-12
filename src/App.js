@@ -7,14 +7,14 @@ import translate from './i18n/translate'
 
 function App() {
   return (
-    <I18nProvider locale={LOCALES.ENGLISH}>
+    <I18nProvider locale={LOCALES.FRENCH}>
       <div className="App">
         <header className="App-header">
           {translate("hello")}
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
-        </p>
+            {translate('edit', { path: <code>src/App.js</code> })}
+          </p>
           <a
             className="App-link"
             href="https://reactjs.org"

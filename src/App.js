@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,8 +6,9 @@ import { I18nProvider, LOCALES } from './i18n'
 import translate from './i18n/translate'
 
 function App() {
+  const [locale, setLocale] = useState(LOCALES.ENGLISH)
   return (
-    <I18nProvider locale={LOCALES.FRENCH}>
+    <I18nProvider locale={locale}>
       <div className="App">
         <header className="App-header">
           {translate("hello")}
@@ -24,6 +25,9 @@ function App() {
             Learn React
         </a>
         </header>
+        <button onClick={() => setLocale(LOCALES.ENGLISH)}>English</button>
+        <button onClick={() => setLocale(LOCALES.GERMAN)}>German</button>
+        <button onClick={() => setLocale(LOCALES.FRENCH)}>French</button>
       </div>
     </I18nProvider>
   );

@@ -3,14 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 import { I18nProvider, LOCALES } from './i18n'
-import { FormattedMessage } from 'react-intl'
+import translate from './i18n/translate'
 
 function App() {
   return (
     <I18nProvider locale={LOCALES.ENGLISH}>
       <div className="App">
         <header className="App-header">
-          <FormattedMessage id="hello" />
+          {translate("hello")}
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
